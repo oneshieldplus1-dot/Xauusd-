@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Signals | XAUUSD Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="gold-icon">🪙</span> GoldSignals
+        </div>
+        <div class="nav-links">
+            <a href="#" class="active">Live Feed</a>
+            <a href="#">Performance</a>
+            <a href="#">My Signals</a>
+        </div>
+        <div class="user-profile">
+            <div class="avatar">JD</div>
+        </div>
+    </nav>
+
+    <!-- Main Content Grid -->
+    <div class="container">
+        
+        <!-- Left Sidebar: Upload Form -->
+        <aside class="sidebar">
+            <div class="card">
+                <h2>Post New Signal</h2>
+                <form id="signalForm">
+                    <div class="form-group">
+                        <label for="pair">Asset</label>
+                        <select id="pair" required>
+                            <option value="XAUUSD">XAU/USD (Gold)</option>
+                            <option value="XAUEUR">XAU/EUR</option>
+                            <option value="XAUGBP">XAU/GBP</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="direction">Direction</label>
+                        <div class="radio-group">
+                            <label class="radio-btn buy">
+                                <input type="radio" name="direction" value="BUY" checked> BUY
+                            </label>
+                            <label class="radio-btn sell">
+                                <input type="radio" name="direction" value="SELL"> SELL
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="entry">Entry Price</label>
+                            <input type="number" id="entry" step="0.01" placeholder="2024.50" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tp">Take Profit</label>
+                            <input type="number" id="tp" step="0.01" placeholder="2030.00" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sl">Stop Loss</label>
+                            <input type="number" id="sl" step="0.01" placeholder="2020.00" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lot">Lot Size</label>
+                            <input type="number" id="lot" step="0.01" placeholder="0.10" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Publish Signal</button>
+                </form>
+            </div>
+        </aside>
+
+        <!-- Right Side: Signal Feed -->
+        <main class="feed">
+            <div class="feed-header">
+                <h2>Live Gold Signals</h2>
+                <span class="status-indicator"><span class="dot"></span> Market Open</span>
+            </div>
+            
+            <div id="signalFeed" class="signal-list">
+                <!-- Signals will be injected here via JavaScript -->
+            </div>
+        </main>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+  </html>
